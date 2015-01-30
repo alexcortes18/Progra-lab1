@@ -1,0 +1,120 @@
+﻿
+# se define los personajes.
+define g = Character('Galex', color="#c6ffc7")
+define r= Character ('Rem', color="#c4ffc9")
+define s = Character('Salad', color="#c7ffc2")
+define p= Character ('Paolo', color="#c8ffc9")
+define k= Character ('Kraken', color="#c8ffc9")
+define m= Character ('Voz Misteriosa', color="#c5ffc3")
+
+# The game starts here.
+label start:
+    #se asignan las imagenes de los personajes, las dibujamos nosotros
+    image galex= "pato.png"
+    image rem= "pato2.png"
+    image salad= "pato3.png"
+    image paolo= "pato4.png"
+    image fondo = "fondo.png"
+    
+    #comenzamos la historia
+    
+    show fondo at center
+    #utilizamos esta variable para guiar el camino de la historia
+    $ eleccion = 0
+    
+    #comenzamos la conversacion
+    m "En un mundo bidimensional donde los seres vivientes son conocidos como stickmans"
+ 
+    m "Uno de ellos estaba pescando tranquilamente"
+    
+    show galex at left
+    
+    g "Woooooow que divertido es pescar"
+    
+    m "Cuando de repente"
+    
+    show fondo at center
+    show salad at left
+    
+    g "Un pescado ha picado!"
+    
+    #Desplegamos menu para que el usuario tome decisiones y dependiendo de ello cambiamos el valor de eleccion
+    menu:
+        "Galex hace su mejor esfuerzo y logra atrapar el pescado.":
+            $eleccion=1
+        "Galex se emociona demasaido y deja escapar al pez.":
+           $eleccion=2
+    #Utilizamos un if para cambiar la historia dependiendo del valor de eleccion
+    
+    if eleccion==1:
+        show fondo at center
+        show paolo at left
+        g "Oh si tengo un lindo pescadito"
+        show rem at right
+        r "Hey niño dame ese pescado"
+        menu:
+            "Esta bien":
+                $eleccion=3
+            "No este es mi pescado!":
+                $eleccion=4
+        if eleccion==3:
+            show fondo at center
+            show fondo at center
+            r "Muajajaja gracias niño"
+            show fondo at center
+            show fondo at center
+            g "Estoy triste"
+            show fondo at center
+            show fondo at center
+            show fondo at center
+            p "No estes triste niño"
+            show fondo at center
+            show fondo at center
+            p "Toma una galleta"
+            show fondo at center
+            show fondo at center
+            g "Ohhh sii "
+            m "Y de esta forma Galex vivio feliz para siempre"
+            m "FIN"
+          
+        if eleccion==4:
+            show fondo at center
+            show paolo at left 
+            r "Pues pelea por el!"
+            menu:
+                "Usa el kamehameha":
+                    $eleccion==5
+                "Falcon Punch":
+                     $eleccion==6
+                "Usa Hadouken":
+                    $eleccion==7
+          
+    if eleccion==2:
+        show fondo at center
+        show paolo at left
+        g "Oh no mi pescado"
+        show rem at right
+        s "Casi me matas niño, le voy a decir a mi tio!"
+        show fondo at center
+        show paolo at left
+        #suena cancion Tiburon tan tan tan tan!
+        k "AAAARRRGGGGHHHH!"
+        show paolo at right
+        k "Quien ha ozado(no se si asi se escribe) a Salad!"
+        show fondo at center
+        show paolo at left
+        show paolo at right
+        g "Dagnabbit.."
+        show fondo at center
+        show paolo at center
+        k "Muere humano"
+        show fondo at center
+        show paolo at center     
+        k "Yumm sabe a Burwings"
+        m "FIN"
+        
+        
+        
+           
+    return
+ 
